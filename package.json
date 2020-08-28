@@ -1,5 +1,5 @@
 {
-  "name": "jobs-and-dragons",
+  "name": "jobs-and-dragons-2",
   "version": "1.0.0",
   "description": "Job Search Game",
   "main": "server.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Winyumi/jobs-and-dragons.git"
+    "url": "git+https://github.com/saltamay/jobs-and-dragons-v2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Winyumi/jobs-and-dragons/issues"
+    "url": "https://github.com/saltamay/jobs-and-dragons-v2/issues"
   },
-  "homepage": "https://github.com/Winyumi/jobs-and-dragons#readme",
+  "homepage": "https://github.com/saltamay/jobs-and-dragons-v2#readme",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
     "@material-ui/core": "^4.9.13",
