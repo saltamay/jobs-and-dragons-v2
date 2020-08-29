@@ -9,14 +9,14 @@ import Footer from './components/Footer';
 import Home from './views/Home';
 import Profile from './views/Profile';
 import Game from './views/Game';
-import jobListing from './views/jobListing';
-import SavedJobs from './views/SavedJobs';
+// import jobListing from './views/jobListing';
+// import SavedJobs from './views/SavedJobs';
 
 // import { useUserContext } from './contexts/UserContext';
 import { useAuth0 } from './react-auth0-spa';
-import UserInfo from './components/UserInfo';
-import CoverPage from './components/CoverPage';
-import Resume from './components/Resume';
+// import UserInfo from './components/UserInfo';
+// import CoverPage from './components/CoverPage';
+// import Resume from './components/Resume';
 
 // styles/
 import './App.css';
@@ -46,24 +46,27 @@ const App = () => {
           <PrivateRoute
             exact
             path='/userinfo'
-            component={UserInfo}
+            // component={UserInfo}
           ></PrivateRoute>
           <PrivateRoute
             exact
             path='/joblisting'
-            component={jobListing}
+            // component={jobListing}
           ></PrivateRoute>
           <PrivateRoute
             exact
             path='/joblisting/saved'
-            component={SavedJobs}
+            // component={SavedJobs}
           ></PrivateRoute>
           <PrivateRoute
             exact
             path='/coverpage'
-            component={CoverPage}
+            // component={CoverPage}
           ></PrivateRoute>
-          <PrivateRoute exact path='/resume' component={Resume}></PrivateRoute>
+          <PrivateRoute 
+            exact path='/resume' 
+            // component={Resume}
+          ></PrivateRoute>
 
           <PrivateRoute path='/game' component={Game}></PrivateRoute>
           <PrivateRoute path='/profile' component={Profile}></PrivateRoute>

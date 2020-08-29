@@ -4,7 +4,7 @@ import brandLogo from '../assets/J&D_newLogo.png';
 import background from '../assets/J&D_Dungeon_dark.jpg';
 import fullBackground from '../assets/light_honeycomb.png';
 
-import LandingDescription from '../components/LandingDescription';
+// import LandingDescription from '../components/LandingDescription';
 
 import 'materialize-css';
 
@@ -21,11 +21,11 @@ function Home() {
         />
 
         <div style={topStyle}>
-          <div style={loginStyle}>
+          {/* <div style={loginStyle}>
             <h4>Guest Login</h4>
             <p>Email: jobsanddragons@gmail.com</p>
             <p>Password: J&Dteam2020</p>
-          </div>
+          </div> */}
           <div className='container'>
             <img
               style={brandLogoStyle}
@@ -41,7 +41,7 @@ function Home() {
 
         </div>
 
-        <LandingDescription />
+        {/* <LandingDescription /> */}
       </div>
 
     </>
