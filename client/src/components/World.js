@@ -9,8 +9,7 @@ import playBG from '../assets/AltPlay.png';
 import academyBG from '../assets/marble.png';
 import villageBG from '../assets/dirt.png';
 import mapBG from '../assets/water.png';
-import { worldmap } from '../maps/map';
-import { town, dungeon, guild, playhouse, fishvillage, academy } from '../maps/questmaps';
+import { town, dungeon, guild, playhouse, fishvillage, academy, worldmap} from './Map/questmaps';
 
 const World = (props) => {
   const [, dispatch] = usePlayerContext();

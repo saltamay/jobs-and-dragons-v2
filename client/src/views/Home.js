@@ -82,13 +82,13 @@ const descStyle = {
   textShadow: '2px 2px black',
 };
 
-const loginStyle = {
-  marginTop: "0",
-  top: "0",
-  float: "right",
-  color: 'white',
-  width: "30rem",
-  background: 'black'
-}
+// const loginStyle = {
+//   marginTop: "0",
+//   top: "0",
+//   float: "right",
+//   color: 'white',
+//   width: "30rem",
+//   background: 'black'
+// }
 
 export default Home;
