@@ -40,6 +40,7 @@ const NavBar = () => {
             </Link>
           </li>
           {!isOpen ? (
+            <>
             <li
               to='/'
               id='qsLoginBtn'
@@ -48,9 +49,21 @@ const NavBar = () => {
               }}
             >
               <Link to='/'>
-                <h5>LOGIN</h5>
+                <h5>STUDENT LOGIN</h5>
               </Link>
             </li>
+            <li
+              to='/'
+              id='qsLoginBtn'
+              onClick={() => {
+                loginWithRedirect({});
+              }}
+            >
+              <Link to='/'>
+                <h5>ADMIN LOGIN</h5>
+              </Link>
+            </li>
+            </>
           ) : (
             <>
               <li to='/profile'>

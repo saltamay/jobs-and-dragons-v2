@@ -21,40 +21,40 @@ export default class ProgressBarExample extends React.Component {
       .then((result) => {
 //         console.log(result);
         if (
-          result.data.progressTracker.quest1 === false &&
-          result.data.progressTracker.quest2 === false &&
-          result.data.progressTracker.quest3 === false
+          !result.data.progressTracker.quest1 &&
+          !result.data.progressTracker.quest2 &&
+          !result.data.progressTracker.quest3 
         ) {
           return this.setState((prevState) => ({
             percentage: prevState.percentage + 0,
           }));
         } else if (
-          result.data.progressTracker.quest1 === true &&
-          result.data.progressTracker.quest2 === false &&
-          result.data.progressTracker.quest3 === false
+          result.data.progressTracker.quest1 &&
+          !result.data.progressTracker.quest2 &&
+          !result.data.progressTracker.quest3 
         ) {
           return this.setState((prevState) => ({
             percentage: prevState.percentage + 33.333,
           }));
         } else if (
-          result.data.progressTracker.quest1 === true &&
-          result.data.progressTracker.quest2 === true &&
-          result.data.progressTracker.quest3 === false
+          result.data.progressTracker.quest1 &&
+          result.data.progressTracker.quest2  &&
+          !result.data.progressTracker.quest3
         ) {
           return this.setState((prevState) => ({
             percentage: prevState.percentage + 66.666,
           }));
         } else if (
-          result.data.progressTracker.quest1 === true &&
-          result.data.progressTracker.quest2 === true &&
-          result.data.progressTracker.quest3 === true
+          result.data.progressTracker.quest1 &&
+          result.data.progressTracker.quest2 &&
+          result.data.progressTracker.quest3
         ) {
           return this.setState((prevState) => ({
             percentage: prevState.percentage + 100,
           }));
         } else {
           return this.setState((prevState) => ({
-            percentage: prevState.percentage + 0,
+            percentage: prevState.percentage,
           }));
         }
       });
@@ -87,16 +87,16 @@ const Title = (props) => {
   let text;
   switch (props.percentage) {
     case 0:
-      text = 'Student';
+      text = 'Grasshopper';
       break;
     case 33.333:
-      text = 'Employer Ready';
+      text = 'Resume Approved';
       break;
     case 66.666:
-      text = 'Employer Competitive';
+      text = 'GitHub Approved';
       break;
     case 100:
-      text = 'Industry Professional';
+      text = 'Portfolio Approved';
       break;
     default:
       break;
