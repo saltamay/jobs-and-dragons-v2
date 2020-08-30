@@ -58,35 +58,6 @@ const AdminPlatform = () => {
         newUser.name = user.name;
         newUser.email = user.email;
         newUser.picture = user.picture;
-
-        window
-          .fetch(`https://api.github.com/users/${user.nickname}`)
-          .then((res) => res.json())
-          .then((res) => {
-            newUser.gamestats.publicRepos = res['public_repos'];
-            newUser.gamestats.followers = res['followers'];
-            return newUser;
-          })
-          .then((newUser) => {
-            window
-              .fetch(`https://api.github.com/users/${user.nickname}/repos`)
-              .then((res) => res.json())
-              .then((res) => {
-                const numOfStars = res.reduce((acc, repo) => {
-                  return acc + repo['stargazers_count'];
-                }, 0);
-                newUser.gamestats.numOfStars = numOfStars;
-                return newUser;
-              })
-              .then((newUser) => {
-                api.addUserInfo(newUser).then((result) => {
-                  if (result.success) {
-                    dispatch({ type: 'user', payload: result.data });
-                    setIsLoading(false);
-                  }
-                });
-              });
-          });
       }
     });
   }, [loading, user, dispatch]);

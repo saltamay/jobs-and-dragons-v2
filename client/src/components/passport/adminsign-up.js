@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class AdminSignup extends Component {
 	constructor() {
@@ -20,12 +20,12 @@ class AdminSignup extends Component {
 	}
 	handleSubmit(event) {
 		console.log('sign-up handleSubmit, adminname: ')
-		console.log(this.state.username)
+		console.log(this.state.adminname)
 		event.preventDefault()
 
 		//request to server to add a new username/password
 		axios.post('/user/', {
-			username: this.state.username,
+			adminname: this.state.adminname,
 			password: this.state.password
 		})
 			.then(response => {
@@ -36,7 +36,7 @@ class AdminSignup extends Component {
 						redirectTo: '/login'
 					})
 				} else {
-					console.log('username already taken')
+					console.log('adminname already taken')
 				}
 			}).catch(error => {
 				console.log('signup error: ')
@@ -53,7 +53,7 @@ render() {
 			<form className="form-horizontal">
 				<div className="form-group">
 					<div className="col-1 col-ml-auto">
-						<label className="form-label" htmlFor="username">Username</label>
+						<label className="form-label" htmlFor="adminname">Adminname</label>
 					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
@@ -61,7 +61,7 @@ render() {
 							id="username"
 							name="username"
 							placeholder="Username"
-							value={this.state.username}
+							value={this.state.adminname}
 							onChange={this.handleChange}
 						/>
 					</div>

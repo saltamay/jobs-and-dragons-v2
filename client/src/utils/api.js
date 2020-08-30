@@ -19,4 +19,11 @@ export const api = {
     const jsonRes = await res.json();
     return jsonRes;
   },
+
+  async getAllUsers() {
+    const res = await fetch(`/api/v1/users`);
+    const jsonRes = await res.json();
+    console.log(jsonRes);
+    return jsonRes;
+  },
 };
