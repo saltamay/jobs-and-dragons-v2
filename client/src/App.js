@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './views/Home';
 import Profile from './views/Profile';
+import AdminPlatform from './views/AdminPlatform';
 import Game from './views/Game';
 // import jobListing from './views/jobListing';
 // import SavedJobs from './views/SavedJobs';
@@ -70,6 +71,7 @@ const App = () => {
 
           <PrivateRoute path='/game' component={Game}></PrivateRoute>
           <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
+          <PrivateRoute path='/admin' component={AdminPlatform}></PrivateRoute>
         </Switch>
       </div>
       {isAuthenticated ? <Footer /> : null}
