@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 'materialize-css';
-
 import PrivateRoute from './components/PrivateRoute';
 import Loading from './components/Loading';
 import NavBar from './components/NavBar';
@@ -14,7 +13,7 @@ import Game from './views/Game';
 // import SavedJobs from './views/SavedJobs';
 
 // import { useUserContext } from './contexts/UserContext';
-import { useAuth0 } from './react-auth0-spa';
+// import { useAuth0 } from './react-auth0-spa';
 // import UserInfo from './components/UserInfo';
 // import CoverPage from './components/CoverPage';
 // import Resume from './components/Resume';
@@ -23,26 +22,26 @@ import { useAuth0 } from './react-auth0-spa';
 import './App.css';
 
 const App = () => {
-  const { loading, isAuthenticated } = useAuth0();
+  // const { loading, isAuthenticated } = useAuth0();
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div id='app'>
-      {isAuthenticated ? <NavBar /> : null}
+   {/* <NavBar /> */}
       <div className='row'>
         <Switch>
-          {isAuthenticated ? (
+          {/* {isAuthenticated ? (
             <Route exact path='/' component={Home} />
-          ) : (
+          ) : ( */}
             <Route>
               <NavBar />
               <Home />
-              <Footer />
+              {/* <Footer /> */}
             </Route>
-          )}
+          {/* )} */}
 
           <PrivateRoute
             exact
@@ -51,30 +50,22 @@ const App = () => {
           ></PrivateRoute>
           <PrivateRoute
             exact
-            path='/joblisting'
-            // component={jobListing}
-          ></PrivateRoute>
-          <PrivateRoute
+            path='/game' 
+            component={Game}
+            ></PrivateRoute>
+          <PrivateRoute 
             exact
-            path='/joblisting/saved'
-            // component={SavedJobs}
-          ></PrivateRoute>
-          <PrivateRoute
-            exact
-            path='/coverpage'
-            // component={CoverPage}
+            path='/profile' 
+            component={Profile}
           ></PrivateRoute>
           <PrivateRoute 
-            exact path='/resume' 
-            // component={Resume}
+            exact
+            path='/admin' 
+            component={AdminPlatform}
           ></PrivateRoute>
-
-          <PrivateRoute path='/game' component={Game}></PrivateRoute>
-          <PrivateRoute path='/profile' component={Profile}></PrivateRoute>
-          <PrivateRoute path='/admin' component={AdminPlatform}></PrivateRoute>
         </Switch>
       </div>
-      {isAuthenticated ? <Footer /> : null}
+      <Footer />
     </div>
   );
 };

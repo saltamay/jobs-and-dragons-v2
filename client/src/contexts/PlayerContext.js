@@ -1,11 +1,4 @@
 import React, { createContext, useReducer, useContext } from 'react';
-// import { dungeon } from '../maps/dungeon';
-// import { guild } from '../maps/guild';
-// import { playhouse } from '../maps/playhouse';
-// import { academy } from '../maps/academy';
-// import { fishvillage } from '../maps/fishvillage';
-// import { worldmap } from '../maps/map';
-// import { town } from '../maps/town';
 import { town, dungeon, guild, playhouse, fishvillage, academy, worldmap } from '../components/Map/questmaps';
 
 const PlayerContext = createContext();

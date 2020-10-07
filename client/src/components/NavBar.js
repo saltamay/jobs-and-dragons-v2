@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'materialize-css';
-import { useAuth0 } from '../react-auth0-spa';
+// import { useAuth0 } from '../react-auth0-spa';
 import logo from '../assets/J&D_Logo_BG_K.png';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState();
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  // const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   // const toggle = () => setIsOpen(!isOpen);
 
-  const logoutWithRedirect = () =>
-    logout({
-      returnTo: window.location.origin,
-    });
+  // const logoutWithRedirect = () =>
+  //   logout({
+  //     returnTo: window.location.origin,
+  //   });
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      setIsOpen(true);
-    } else {
-      setIsOpen(false);
-    }
-  }, [isAuthenticated]);
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     setIsOpen(true);
+  //   } else {
+  //     setIsOpen(false);
+  //   }
+  // }, [isAuthenticated]);
 
   return (
     <nav>
@@ -39,7 +39,17 @@ const NavBar = () => {
               <h5>HOME</h5>
             </Link>
           </li>
-          {!isOpen ? (
+          <li>
+            <Link to='/'>
+              <h5>STUDENT LOGIN</h5>
+            </Link>
+          </li>
+          <li>
+            <Link to='/'>
+              <h5>ADMIN LOGIN</h5>
+            </Link>
+          </li>
+          {/* {!isOpen ? (
             <>
             <li
               to='/'
@@ -48,9 +58,9 @@ const NavBar = () => {
                 loginWithRedirect({});
               }}
             >
-              <Link to='/'>
-                <h5>STUDENT LOGIN</h5>
-              </Link>
+              // <Link to='/'>
+              //   <h5>STUDENT LOGIN</h5>
+              // </Link>
             </li>
             <li
               to='/'
@@ -83,7 +93,7 @@ const NavBar = () => {
                 </Link>
               </li>
             </>
-          )}
+          )} */}
         </ul>
       </div>
     </nav>
